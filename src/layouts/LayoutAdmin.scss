@@ -1,0 +1,29 @@
+@import "../scss/index.scss";
+
+.layout-admin {
+  transition: margin-left 0.2s;
+
+  &__header {
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    padding: 0;
+    height: 6.5rem;
+  }
+
+  &__content {
+    min-height: calc(100vh - 6.5rem);
+    padding: 9rem 2.5rem 2.5rem 2.5rem;
+  }
+
+  &__footer {
+    padding: 0;
+    margin: 2rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+}

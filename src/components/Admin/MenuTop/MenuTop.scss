@@ -1,0 +1,65 @@
+@import "../../../scss/index.scss";
+
+.menu-top {
+  display: flex;
+
+  Button {
+    color: #fff;
+    background-color: transparent;
+    border: none;
+
+    top: 0.5rem;
+    padding: 0;
+    font-size: 1.9rem;
+    margin-left: 6rem;
+
+    & :hover {
+      color: $primary-color;
+      border: none;
+    }
+    & :focus,
+    & :active {
+      color: $primary-color;
+    }
+  }
+
+  &__left {
+    &-logo {
+      max-width: 100%;
+      padding: 0 1rem;
+      max-height: 5rem;
+    }
+  }
+  span {
+    color: #fff;
+    align-items: center;
+    margin-right: 1rem;
+  }
+}
+
+.menu-top__rigth {
+  position: absolute;
+  right: 0;
+  top: 0.6rem;
+  padding-right: 2rem;
+}
+
+.ant-btn:hover,
+.ant-btn:focus,
+.ant-btn:active {
+  background-color: transparent;
+}
+
+.spanTop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .spanTop {
+    display: inline-block;
+  }
+
+  .menu-top Button {
+    margin-left: 1rem;
+  }
+}
