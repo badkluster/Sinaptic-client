@@ -1,4 +1,5 @@
 @import "../../../scss/index.scss";
+@import "../../../scss/mixins";
 
 .sign-in {
   background-color: #398dc5;
@@ -22,8 +23,12 @@
       backdrop-filter: blur(2rem);
       border-radius: 0.5rem;
       border: solid 1rem reba(255, 255, 255, 05);
-      padding: 2rem 2rem;
+      padding: 2rem 1rem;
       margin-bottom: 2rem;
+      @media (min-width: 768px) {
+        max-width: 90%;
+        padding: 2rem 2rem;
+      }
 
       .ant-tabs {
         width: 90vw;
@@ -43,16 +48,18 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 50%;
+        width: 100px;
         height: 60px !important;
         text-align: center;
-        font-size: 0em + 19px / $defaultFontSize;
+        font-size: 1rem;
         border-top: 4px solid $border-grey !important;
         border-radius: 0 !important;
         margin: 0 !important;
-        @media (min-width: 320px) {
+
+        @media (min-width: 768px) {
           width: 220px;
           font-size: 0em + 23px / $defaultFontSize;
+          margin-left: 0px !important;
         }
 
         &:hover {
@@ -88,4 +95,19 @@
 .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
   color: rgb(112, 20, 20);
   font-weight: 500;
+  @media (max-width: 720px) {
+    font-size: 1rem;
+  }
+}
+
+.ant-tabs-tab.ant-tabs-tab-active {
+  @media (min-width: 768px) {
+  }
+}
+
+.ant-tabs-tab-btn {
+  @media (max-width: 720px) {
+    font-size: 1rem;
+    padding: 0 !important;
+  }
 }

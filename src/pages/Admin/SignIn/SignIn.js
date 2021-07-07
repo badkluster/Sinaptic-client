@@ -5,6 +5,7 @@ import Logo from "../../../assets/logoSinaptic.webp";
 import RegisterForm from "../../../components/Admin/RegisterForm";
 
 import "./SignIn.scss";
+import LoginForm from "../../../components/Admin/LoginForm/LoginForm";
 
 export default function SignIn() {
   const { Content } = Layout;
@@ -19,8 +20,7 @@ export default function SignIn() {
         <div className="sign-in__content-tabs">
           <Tabs type="card">
             <TabPane tab={<span>Entrar</span>} key="1">
-              {" "}
-              Contenido entrar
+              <LoginForm />
             </TabPane>
             <TabPane tab={<span>Nuevo usuario</span>} key="2">
               <RegisterForm />
