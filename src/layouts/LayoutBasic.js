@@ -1,23 +1,20 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import { Layout } from "antd";
+import MenuTop from "../components/Web/MenuTop";
+import Footer from "../components/Web/Footer";
 
 import "./LayoutBasic.scss";
 
 export default function LayoutBasic(props) {
   const { routes } = props;
-  const { Content, Footer } = Layout;
-  return (
-    <Layout>
-      <h2>Menu basic... </h2>
-      <Layout>
-        <Content>
-          <LoadRoutes routes={routes} />
-        </Content>
 
-        <Footer>Sinaptic || Stay Connected</Footer>
-      </Layout>
-    </Layout>
+  return (
+    <>
+      <MenuTop />
+
+      <LoadRoutes routes={routes} />
+      <Footer />
+    </>
   );
 }
 

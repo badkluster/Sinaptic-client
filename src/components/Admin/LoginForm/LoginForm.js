@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Form, Input, Button, notification } from "antd";
-import { UserOutlined, LockOutlined } from "@ant-design/icons";
+import { Form, Icon, Input, Button, notification } from "antd";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../../../utils/constants";
 import { signInApi } from "../../../api/user";
 
@@ -9,22 +8,23 @@ import "./LoginForm.scss";
 export default function LoginForm() {
   const [inputs, setInputs] = useState({
     email: "",
-    password: "",
+    password: ""
   });
 
-  const changeForm = (e) => {
+  const changeForm = e => {
     setInputs({
       ...inputs,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     });
   };
 
-  const login = async (e) => {
+  const login = async e => {
+    e.preventDefault();
     const result = await signInApi(inputs);
 
     if (result.message) {
       notification["error"]({
-        message: result.message,
+        message: result.message
       });
     } else {
       const { accessToken, refreshToken } = result;
@@ -32,23 +32,20 @@ export default function LoginForm() {
       localStorage.setItem(REFRESH_TOKEN, refreshToken);
 
       notification["success"]({
-        message: "Login correcto.",
+        message: "Login correcto."
       });
 
       window.location.href = "/admin";
     }
+
+    console.log(result);
   };
 
   return (
-    <Form className="login-form" onChange={changeForm} onFinish={login}>
+    <Form className="login-form" onChange={changeForm} onSubmit={login}>
       <Form.Item>
         <Input
-          prefix={
-            <UserOutlined
-              className="__iconForm"
-              style={{ color: "rgba(0,0,0,.25)" }}
-            />
-          }
+          prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
           type="email"
           name="email"
           placeholder="Correo electronico"
@@ -57,12 +54,7 @@ export default function LoginForm() {
       </Form.Item>
       <Form.Item>
         <Input
-          prefix={
-            <LockOutlined
-              className="__iconForm"
-              style={{ color: "rgba(0,0,0,.25)" }}
-            />
-          }
+          prefix={<Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />}
           type="password"
           name="password"
           placeholder="Contraseña"

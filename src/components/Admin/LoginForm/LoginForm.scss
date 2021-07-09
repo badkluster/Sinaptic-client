@@ -7,8 +7,8 @@
 
   &__input {
     .ant-input-prefix {
-      .__iconForm {
-        font-size: 0em + 22px / $defaultFontSize;
+      i {
+        form-size: 0em + 22px / $defaultFontSize;
       }
     }
 
@@ -25,16 +25,14 @@
   &__button {
     width: 100%;
     font-size: 0em + 22px / $defaultFontSize;
-    background-color: rgb(112, 20, 20);
+    background-color: $primary-color;
     color: $font-light;
     height: 42px;
     margin-top: 20px;
-    transition: all 0.5s;
 
     &:hover {
       background-color: $primary-color-hover;
       color: $font-light;
-      font-size: 20px;
     }
     &:focus,
     &:active {

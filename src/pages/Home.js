@@ -1,9 +1,17 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 
 export default function Home() {
   return (
-    <div>
-      <h1>Estamos en Home....</h1>
-    </div>
+    <>
+      <Helmet>
+        <title>Sinaptic || Applied Technology</title>
+        <meta
+          name="description"
+          content="Sinaptic || Applied Technology"
+          data-react-helmet="true"
+        />
+      </Helmet>
+    </>
   );
 }

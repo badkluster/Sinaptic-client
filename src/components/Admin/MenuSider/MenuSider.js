@@ -1,52 +1,49 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Layout, Menu } from "antd";
-import {
-  HomeOutlined,
-  UserOutlined,
-  MenuOutlined,
-  BookOutlined,
-  MailOutlined,
-  MessageOutlined,
-} from "@ant-design/icons";
+import { Link, withRouter } from "react-router-dom";
+import { Layout, Menu, Icon } from "antd";
 
 import "./MenuSider.scss";
 
-export default function MenuSider(props) {
+function MenuSider(props) {
+  const { menuCollapsed, location } = props;
   const { Sider } = Layout;
-  const { menuCollapsed } = props;
 
   return (
     <Sider className="admin-sider" collapsed={menuCollapsed}>
-      <Menu className="menu-slider" theme="dark" mode="inline" d>
-        <Menu.Item className="menu-text" key="/admin">
-          <Link to={"/admin"}>
-            <HomeOutlined />
-            <span className="nav-text"> Home </span>
+      <Menu
+        theme="dark"
+        mode="inline"
+        defaultSelectedKeys={[location.pathname]}
+        // defaultSelectedKeys={["/admin"]}
+      >
+        <Menu.Item key="/admin">
+          <Link to="/admin">
+            <Icon type="home" />
+            <span className="nav-text">Home</span>
           </Link>
         </Menu.Item>
-        <Menu.Item className="menu-text" key="/admin/users">
-          <Link to={"/admin/users"}>
-            <UserOutlined />
-            <span className="nav-text"> Usuarios </span>
+        <Menu.Item key="/admin/users">
+          <Link to="/admin/users">
+            <Icon type="user" />
+            <span className="nac-text">Usuarios</span>
           </Link>
         </Menu.Item>
-        <Menu.Item className="menu-text" key="/admin/menu">
-          <Link to={"/admin/menu"}>
-            <MenuOutlined />
-            <span className="nav-text"> Menú </span>
+        <Menu.Item key="/admin/menu">
+          <Link to="/admin/menu">
+            <Icon type="menu" />
+            <span className="nac-text">Menú</span>
           </Link>
         </Menu.Item>
 
-        <Menu.Item className="menu-text" key="/admin/blog">
-          <Link to={"/admin/blog"}>
-            <MessageOutlined />
-            <span className="nav-text"> Blog </span>
+        <Menu.Item key="/admin/blog">
+          <Link to="/admin/blog">
+            <Icon type="message" />
+            <span className="nac-text">Blog</span>
           </Link>
         </Menu.Item>
         <Menu.Item className="menu-text" key="/admin/get-newsletter">
           <Link to={"/admin/get-newsletter"}>
-            <MailOutlined />
+            <Icon type="mail" />
             <span className="nav-text"> Newsletter </span>
           </Link>
         </Menu.Item>
@@ -54,3 +51,5 @@ export default function MenuSider(props) {
     </Sider>
   );
 }
+
+export default withRouter(MenuSider);

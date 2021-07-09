@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { Form, Input, Button, Checkbox, notification } from "antd";
-import { UserAddOutlined, LockOutlined } from "@ant-design/icons";
+import { Form, Icon, Input, Button, Checkbox, notification } from "antd";
 import {
   emailValidation,
-  minLengthValidation,
+  minLengthValidation
 } from "../../../utils/formValidation";
 import { signUpApi } from "../../../api/user";
 
@@ -14,30 +13,30 @@ export default function RegisterForm() {
     email: "",
     password: "",
     repeatPassword: "",
-    privacyPolicy: false,
+    privacyPolicy: false
   });
   const [formValid, setFormValid] = useState({
     email: false,
     password: false,
     repeatPassword: false,
-    privacyPolicy: false,
+    privacyPolicy: false
   });
 
-  const changeForm = (e) => {
+  const changeForm = e => {
     if (e.target.name === "privacyPolicy") {
       setInputs({
         ...inputs,
-        [e.target.name]: e.target.checked,
+        [e.target.name]: e.target.checked
       });
     } else {
       setInputs({
         ...inputs,
-        [e.target.name]: e.target.value,
+        [e.target.name]: e.target.value
       });
     }
   };
 
-  const inputValidation = (e) => {
+  const inputValidation = e => {
     const { type, name } = e.target;
 
     if (type === "email") {
@@ -51,7 +50,9 @@ export default function RegisterForm() {
     }
   };
 
-  const register = async (e) => {
+  const register = async e => {
+    e.preventDefault();
+
     const emailVal = inputs.email;
     const passwordVal = inputs.password;
     const repeatPasswordVal = inputs.repeatPassword;
@@ -59,22 +60,22 @@ export default function RegisterForm() {
 
     if (!emailVal || !passwordVal || !repeatPasswordVal || !privacyPolicyVal) {
       notification["error"]({
-        message: "Todos los campos son obligatorios",
+        message: "Todos los campos son obligatorios"
       });
     } else {
       if (passwordVal !== repeatPasswordVal) {
         notification["error"]({
-          message: "Las contraseñas tienen que ser iguales.",
+          message: "Las contraseñas tienen que ser iguales."
         });
       } else {
         const result = await signUpApi(inputs);
         if (!result.ok) {
           notification["error"]({
-            message: result.message,
+            message: result.message
           });
         } else {
           notification["success"]({
-            message: result.message,
+            message: result.message
           });
           resetForm();
         }
@@ -94,27 +95,22 @@ export default function RegisterForm() {
       email: "",
       password: "",
       repeatPassword: "",
-      privacyPolicy: false,
+      privacyPolicy: false
     });
 
     setFormValid({
       email: false,
       password: false,
       repeatPassword: false,
-      privacyPolicy: false,
+      privacyPolicy: false
     });
   };
 
   return (
-    <Form className="register-form" onFinish={register} onChange={changeForm}>
+    <Form className="register-form" onSubmit={register} onChange={changeForm}>
       <Form.Item>
         <Input
-          prefix={
-            <UserAddOutlined
-              className="__iconForm"
-              style={{ color: "rgba(0,0,0,.25)" }}
-            />
-          }
+          prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
           type="email"
           name="email"
           placeholder="Correo electronico"
@@ -125,7 +121,7 @@ export default function RegisterForm() {
       </Form.Item>
       <Form.Item>
         <Input
-          prefix={<LockOutlined style={{ color: "rgba(0,0,0,.25)" }} />}
+          prefix={<Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />}
           type="password"
           name="password"
           placeholder="Contraseña"
@@ -136,7 +132,7 @@ export default function RegisterForm() {
       </Form.Item>
       <Form.Item>
         <Input
-          prefix={<LockOutlined style={{ color: "rgba(0,0,0,.25)" }} />}
+          prefix={<Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />}
           type="password"
           name="repeatPassword"
           placeholder="Repetir contraseña"
@@ -150,7 +146,6 @@ export default function RegisterForm() {
           name="privacyPolicy"
           onChange={inputValidation}
           checked={inputs.privacyPolicy}
-          className="privacypolicy"
         >
           He leído y acepto la política de privacidad.
         </Checkbox>

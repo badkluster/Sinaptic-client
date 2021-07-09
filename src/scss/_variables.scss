@@ -1,7 +1,7 @@
 $defaultFontSize: 16px;
 
-$primary-color: rgb(112, 20, 20);
-$primary-color-hover: rgb(87, 17, 17);
+$primary-color: #0098d3;
+$primary-color-hover: #0280b3;
 $primary-color-light: #6ec1e4;
 $primary-color-dark: #8698a5;
 
@@ -40,8 +40,6 @@ $youtube: #cd201f;
 $twitter: #1da1f2;
 $facebook: #3b5998;
 $linkedin: #0077b5;
-$instagram: #517fa4;
-$whatsapp: #00bb2d;
 
 // Responsive down size
 $media-breackpoint-down-xs: 413.98px;
@@ -56,8 +54,3 @@ $media-breackpoint-up-sm: 576px;
 $media-breackpoint-up-md: 768px;
 $media-breackpoint-up-lg: 992px;
 $media-breackpoint-up-xl: 1200px;
-
-// Media Queries
-$telefono: 480px;
-$tablet: 768px;
-$desktop: 1200px;

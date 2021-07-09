@@ -1,12 +1,7 @@
 @import "../../../scss/index.scss";
-@import "../../../scss/mixins";
 
 .register-form {
   text-align: left;
-
-  .__iconForm {
-    font-size: 2rem;
-  }
 
   .ant-form-item {
     &:nth-child(3),
@@ -14,10 +9,17 @@
       margin: 0;
     }
   }
+
   &__input {
+    .ant-input-prefix {
+      i {
+        font-size: 0em + 22px / $defaultFontSize;
+      }
+    }
+
     input {
       font-size: 0em + 20px / $defaultFontSize;
-      padding: 0px 5px 10px 30px !important;
+      padding: 20px 20px 20px 40px !important;
       &:focus {
         border-color: $primary-color;
         box-shadow: none;
@@ -28,15 +30,13 @@
   &__button {
     width: 100%;
     font-size: 0em + 22px / $defaultFontSize;
-    background-color: rgb(112, 20, 20);
+    background-color: $primary-color;
     color: $font-light;
     height: 42px;
-    transition: all 0.5s;
 
     &:hover {
       background-color: $primary-color-hover;
       color: $font-light;
-      padding: 0px 50px;
     }
     &:focus,
     &:active {
@@ -45,11 +45,4 @@
       border: 0;
     }
   }
-  .privacypolicy {
-    padding: 15px;
-  }
-}
-
-.ant-tabs-content {
-  padding: 0px !important;
 }

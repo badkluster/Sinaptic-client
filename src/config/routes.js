@@ -1,17 +1,21 @@
-//Layout
+// Layout
 import LayoutAdmin from "../layouts/LayoutAdmin";
-
-//Admin Pages
-import AdminHome from "../pages/Admin";
-import AdminSingIn from "../pages/Admin/SignIn";
-
-//Layout users
 import LayoutBasic from "../layouts/LayoutBasic";
 
-//Pages users
-import Home from "../pages/Home";
+// Admin Pages
+import AdminHome from "../pages/Admin";
+import AdminSingIn from "../pages/Admin/SignIn";
+import AdminUsers from "../pages/Admin/Users";
+import AdminMenuWeb from "../pages/Admin/MenuWeb";
+import MenuNewsletter from "../pages/Admin/MenuNewsletter";
+import AdminBlog from "../pages/Admin/Blog";
 
-//Other
+// Pages
+import Home from "../pages/Home";
+import Contact from "../pages/Contact";
+import Blog from "../pages/Blog";
+
+// Other
 import Error404 from "../pages/Error404";
 
 const routes = [
@@ -31,6 +35,26 @@ const routes = [
         exact: true,
       },
       {
+        path: "/admin/users",
+        component: AdminUsers,
+        exact: true,
+      },
+      {
+        path: "/admin/menu",
+        component: AdminMenuWeb,
+        exact: true,
+      },
+      {
+        path: "/admin/get-newsletter",
+        component: MenuNewsletter,
+        exact: true,
+      },
+      {
+        path: "/admin/blog",
+        component: AdminBlog,
+        exact: true,
+      },
+      {
         component: Error404,
       },
     ],
@@ -43,6 +67,22 @@ const routes = [
       {
         path: "/",
         component: Home,
+        exact: true,
+      },
+      {
+        path: "/contact",
+        component: Contact,
+        exact: true,
+      },
+
+      {
+        path: "/blog",
+        component: Blog,
+        exact: true,
+      },
+      {
+        path: "/blog/:url",
+        component: Blog,
         exact: true,
       },
       {

@@ -1,0 +1,16 @@
+.contenedor-admin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.contenedor-admin h1 {
+  color: red;
+  font-size: 25px;
+}
+
+.contenedor-admin img {
+  max-width: 100%;
+  max-height: 400px;
+}

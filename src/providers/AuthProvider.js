@@ -1,11 +1,11 @@
 import React, { useState, useEffect, createContext } from "react";
+import jwtDecode from "jwt-decode";
 import {
   getAccessTokenApi,
   getRefreshTokenApi,
   refreshAccessTokenApi,
-  logout,
+  logout
 } from "../api/auth";
-import jwtDecode from "jwt-decode";
 
 export const AuthContext = createContext();
 
@@ -13,7 +13,7 @@ export default function AuthProvider(props) {
   const { children } = props;
   const [user, setUser] = useState({
     user: null,
-    isLoading: true,
+    isLoading: true
   });
 
   useEffect(() => {
@@ -33,7 +33,7 @@ function checkUserLogin(setUser) {
       logout();
       setUser({
         user: null,
-        isLoading: false,
+        isLoading: false
       });
     } else {
       refreshAccessTokenApi(refreshToken);
@@ -41,7 +41,7 @@ function checkUserLogin(setUser) {
   } else {
     setUser({
       isLoading: false,
-      user: jwtDecode(accessToken),
+      user: jwtDecode(accessToken)
     });
   }
 }
