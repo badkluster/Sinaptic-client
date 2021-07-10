@@ -54,10 +54,6 @@ export default function MenuTop() {
       <header>
         <div class="head">
           <h1>Jorge Emanuel Dominguez</h1>
-          <p>
-            {" "}
-            Soy <span class="typing"></span>
-          </p>
         </div>
         <a href="#contacto" class="btn-contact btn">
           {" "}
