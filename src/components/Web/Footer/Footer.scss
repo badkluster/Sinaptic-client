@@ -1,7 +1,7 @@
 @import "../../../scss/index.scss";
 
 .footer {
-  background-color: $background-dark-web;
+  background-color: #626b80;
   border-top: 3px solid $primary-color;
 
   &__copyright {
@@ -15,4 +15,8 @@
       }
     }
   }
+}
+
+.footer-left {
+  padding-right: 8rem;
 }

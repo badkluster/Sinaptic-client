@@ -1,0 +1,69 @@
+.portfolio {
+  background-image: url("../../../assets/fondoportfolio.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: auto;
+  max-width: 100%;
+}
+
+.portfolio h2 {
+  text-align: center;
+  color: #fff;
+  padding-top: 5rem;
+}
+
+.portfolio img {
+  max-width: 100%;
+}
+
+.contenidos-portfolio {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+  .contenidos-portfolio {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contenido-portfolio p {
+    padding: 5rem;
+  }
+
+  .portfolio-rigth {
+    padding-right: 20rem;
+    padding-left: 5rem;
+  }
+
+  .portfolio-left {
+    padding-left: 20rem;
+  }
+}
+
+.contenido-portfolio {
+  text-align: start;
+  color: #fff;
+}
+
+.contenido-portfolio h3 {
+  color: #fff;
+}
+
+.contenido-portfolio p {
+  color: #bbbbbb;
+  font-size: 1.8rem;
+}
+
+.portfolio-rigth {
+  padding: 0;
+  text-align: center;
+}
+
+.portfolio-left {
+  padding: 0;
+  text-align: center;
+}

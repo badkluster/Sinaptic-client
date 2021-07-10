@@ -17,7 +17,11 @@ export default function MenuTop(props) {
     <div className="menu-top">
       <div className="menu-top__left">
         <img className="menu-top__left-logo" src={Logo} alt="Logo Sinaptic" />
-        <Button type="link" onClick={() => setMenuCollapsed(!menuCollapsed)}>
+        <Button
+          type="link"
+          onClick={() => setMenuCollapsed(!menuCollapsed)}
+          className="menu-top__left-icon"
+        >
           <Icon type={menuCollapsed ? "menu-unfold" : "menu-fold"} />
         </Button>
       </div>

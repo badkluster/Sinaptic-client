@@ -1,0 +1,14 @@
+.clientes {
+  height: auto;
+  background-color: #e5eeed;
+}
+.clientes h2 {
+  padding-top: 4rem;
+  color: #333;
+  text-align: center;
+}
+
+.clientes img {
+  max-width: 100%;
+  height: auto;
+}

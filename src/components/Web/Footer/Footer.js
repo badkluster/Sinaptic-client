@@ -1,7 +1,7 @@
 import React from "react";
 import { Layout, Row, Col } from "antd";
 import MyInfo from "./MyInfo";
-import NavigationFooter from "./NavigationFooter";
+
 import Newsletter from "../Newsletter";
 
 import "./Footer.scss";
@@ -15,13 +15,11 @@ export default function Footer() {
         <Col md={4} />
         <Col md={16}>
           <Row>
-            <Col md={8}>
+            <Col md={12} className="footer-left">
               <MyInfo />
             </Col>
-            <Col md={8}>
-              <NavigationFooter />
-            </Col>
-            <Col md={8}>
+
+            <Col md={12}>
               <Newsletter />
             </Col>
           </Row>

@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import MenuTop from "../components/Web/MenuTop";
+// import MenuTop from "../components/Web/MenuTop";
+import Navbar from "../components/Web/NavBar/Navbar.jsx";
 import Footer from "../components/Web/Footer";
 
 import "./LayoutBasic.scss";
@@ -10,7 +11,8 @@ export default function LayoutBasic(props) {
 
   return (
     <>
-      <MenuTop />
+      {/* <MenuTop /> */}
+      <Navbar />
 
       <LoadRoutes routes={routes} />
       <Footer />

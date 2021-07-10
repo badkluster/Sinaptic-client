@@ -1,0 +1,89 @@
+.menu-principal {
+  width: 100%;
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+  min-height: 75px;
+  padding: 0 30px;
+  background-color: rgba(13, 37, 56, 0.322);
+  position: sticky;
+  top: 0;
+}
+
+.logo img {
+  width: 200px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.ant-menu {
+  background: transparent !important;
+}
+
+.menu-bar {
+  /* DISPLAY FLEX PARA QUE APAREZCAN UNO AL LADO DEL OTRO space bet separa uno para cada lado*/
+  display: flex !important;
+  width: 100% !important;
+  justify-content: flex-end;
+  left: 20px;
+  margin-right: 40px !important;
+}
+
+.menu-bar .enlaces ul li {
+  /* display in line block para que aparezcan en linea uno al lado del otro*/
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.menu-bar .enlaces ul li a {
+  /*el background es espacial para que tenga una linea abajo cuando hago hover*/
+  font-size: 14px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  background: linear-gradient(currentColor, currentColor);
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  transition: all 0.5s;
+}
+.menu-bar .enlaces ul li a:hover {
+  color: rgb(15, 148, 224);
+  background-size: 50% 2px;
+}
+.menu-bar .sociales a {
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 0 10px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.5s;
+}
+.menu-bar .sociales a:hover {
+  color: rgb(15, 148, 224);
+}
+.menu-principal i {
+  cursor: pointer;
+  color: var(--color-texto);
+  font-size: 30px;
+  float: right;
+  display: none;
+  transition: all 0.5s;
+}
+.menu-principal i:hover {
+  color: rgb(15, 148, 224);
+}
+
+.fa-chevron-down:hover {
+  color: rgb(15, 148, 224);
+}
+
+@media (min-width: 768px) {
+  .logo img {
+    margin-left: 40px;
+  }
+}
